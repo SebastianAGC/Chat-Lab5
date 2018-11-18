@@ -1,6 +1,8 @@
 
 var socket = io.connect('http://localhost:3000');
 const url = 'http://34.210.35.174:7000/';
+const ul = document.getElementById('messages');
+const objDiv = document.querySelector(".chat-p");
 
 function createNode(element) {
     return document.createElement(element);
@@ -31,7 +33,6 @@ fetch(url)
  	.then((data) => {
     	let messages = data;
     	return messages.map((message) => {
-        li_cont++;
     		let li = createNode("li"),
     			text = document.createTextNode(message.nick + ": " + message.text);
 			if (message.nick != "" && message.text != "" ) {

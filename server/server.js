@@ -6,6 +6,7 @@ const fetch = require("node-fetch");
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var FormData = require('form-data');
 
 function getMessages(){
   const url = 'http://34.210.35.174:7000/';
@@ -65,7 +66,7 @@ io.on('connection', function(socket) {
 	socket.on('chat message', function(msg){
     console.log('message: ' + msg.nick);
 		//data going to send in the request.
-		const data = new FormData();
+		var data = new FormData();
 		data.append('student_id', msg.student_id);
 		data.append('text', msg.text);
 		data.append('nick', msg.nick);
