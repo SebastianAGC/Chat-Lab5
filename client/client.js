@@ -25,7 +25,7 @@ function sendMessage(){
 }
 
 
-Retrieveing all server messages with the fetch API
+// Retrieveing all server messages with the fetch API
 fetch(url)
 	.then((resp) => resp.json()) // Transform the data into json
  	.then((data) => {
@@ -43,7 +43,7 @@ fetch(url)
 			}
         objDiv.scrollTop = objDiv.scrollHeight;
     	})
-//     })
+    })
 
 
 // Get the input field
